@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+
+    >
+    <TextView
+        android:id="@+id/billItemTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ponozky"
+        android:textSize="9pt"
+        android:textColor="#303030"
+        />
+    <TextView
+        android:id="@+id/billItemQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_gravity="top"
+        android:text="Qty"
+        android:textSize="6pt"
+        android:textColor="#33b5e5"
+        />
+    <TextView
+        android:id="@+id/billItemPrice"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0.00"
+        android:textColor="#303030"
+        android:textSize="9pt"
+        android:gravity="right"
+        />
+</LinearLayout>
