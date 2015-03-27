@@ -12,6 +12,7 @@ import java.util.Iterator;
 
 /**
  * Created by peterkmet on 27/03/15.
+ *
  */
 public class ItemPriceList {
     @DatabaseField(generatedId = true)
