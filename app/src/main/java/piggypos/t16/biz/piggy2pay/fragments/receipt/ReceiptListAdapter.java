@@ -130,6 +130,7 @@ public class ReceiptListAdapter extends BaseAdapter {
                 Dao<Bill, Integer> billDao = dbHelper.getDao(Bill.class);
                 Bill bill = billDao.queryForId(currentBill.getId());
                 biList = new ArrayList(bill.getItems());
+
             }catch(SQLException ex){
                 ex.printStackTrace();
             }

@@ -1,12 +1,15 @@
 package piggypos.t16.biz.piggy2pay.db;
 
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
 import java.math.BigDecimal;
 
 /**
  * Created by peterkmet on 27/03/15.
  */
+
+@DatabaseTable
 public class ItemPrice {
     @DatabaseField(generatedId = true)
     private int id;

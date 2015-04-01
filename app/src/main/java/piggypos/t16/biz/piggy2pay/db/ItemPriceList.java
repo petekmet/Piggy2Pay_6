@@ -4,6 +4,7 @@ import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
+import com.j256.ormlite.table.DatabaseTable;
 
 import java.math.BigDecimal;
 import java.sql.SQLException;
@@ -14,6 +15,8 @@ import java.util.Iterator;
  * Created by peterkmet on 27/03/15.
  *
  */
+
+@DatabaseTable
 public class ItemPriceList {
     @DatabaseField(generatedId = true)
     private int id;

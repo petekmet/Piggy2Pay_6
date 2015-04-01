@@ -1,6 +1,7 @@
 package piggypos.t16.biz.piggy2pay.db;
 
 import android.provider.ContactsContract;
+import android.util.Log;
 
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.ForeignCollection;
@@ -18,13 +19,15 @@ import java.util.Date;
 
 @DatabaseTable
 public class Bill {
+    private static final String TAG = Bill.class.getName();
+
     @DatabaseField(generatedId = true)
     private int id; //bill number in case multiple bills are open in the same time
 
     @DatabaseField
     private Date created;
 
-    @ForeignCollectionField
+    @ForeignCollectionField(eager = true)
     private ForeignCollection<BillItem> items;
 
     public ForeignCollection<BillItem> getItems() {
@@ -45,7 +48,7 @@ public class Bill {
 
     public void clearBill(DatabaseHelper dbHelper){
         ArrayList<BillItem> itemsList = new ArrayList<>(items);
-
+        Log.d(TAG, "items to delete="+items.size());
         try {
             Dao<BillItem,Integer> dao = dbHelper.getDao(BillItem.class);
             for (BillItem bitm : itemsList) {

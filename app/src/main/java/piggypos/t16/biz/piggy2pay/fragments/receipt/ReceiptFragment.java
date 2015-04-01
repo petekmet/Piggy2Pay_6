@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import java.sql.SQLException;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import butterknife.OnClick;
@@ -42,6 +44,10 @@ public class ReceiptFragment extends Fragment {
 
     @OnClick(R.id.receiptClearBtn)
     public void onClearReceipt(){
-        PiggyApplication.getInstance().clearCustomBill();
+        try {
+            PiggyApplication.getInstance().clearCustomBill();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

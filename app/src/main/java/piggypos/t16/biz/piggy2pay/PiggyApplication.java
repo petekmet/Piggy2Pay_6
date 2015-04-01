@@ -101,15 +101,24 @@ public class PiggyApplication extends Application {
         //this.currentBillId = currentBillId;
     }
 
-    public void clearCustomBill(){
+    public void clearCustomBill() throws SQLException {
 
         //delete Bill
         //delete all BillItem
         //delete all BillItemPriceList
         //delete all BillItemPrice
 
-        currentBill.clearBill(databaseHelper);
-        receiptListAdapter.notifyDataSetChanged();
+        if(currentBill!=null) {
+            Dao<Bill, Integer> cbDao = databaseHelper.getDao(Bill.class);
+            Bill bill = cbDao.queryForId(currentBill.getId());
+
+            bill.clearBill(databaseHelper);
+
+            cbDao.delete(bill);
+            currentBill = null;
+
+            receiptListAdapter.notifyDataSetChanged();
+        }
     }
 
     public void addCustomBillItem(BigDecimal price) {

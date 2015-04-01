@@ -97,42 +97,41 @@ public class NumpadFragment extends Fragment {
 
         switch(id){
             case R.id.numPad1:
-
                 entered = BigDecimal.valueOf(1, scale);
                 break;
-            case R.id.numPad2:
 
+            case R.id.numPad2:
                 entered = BigDecimal.valueOf(2, scale);
                 break;
-            case R.id.numPad3:
 
+            case R.id.numPad3:
                 entered = BigDecimal.valueOf(3, scale);
                 break;
-            case R.id.numPad4:
 
+            case R.id.numPad4:
                 entered = BigDecimal.valueOf(4, scale);
                 break;
-            case R.id.numPad5:
 
+            case R.id.numPad5:
                 entered = BigDecimal.valueOf(5, scale);
                 break;
-            case R.id.numPad6:
 
+            case R.id.numPad6:
                 entered = BigDecimal.valueOf(6, scale);
                 break;
-            case R.id.numPad7:
 
+            case R.id.numPad7:
                 entered = BigDecimal.valueOf(7, scale);
                 break;
+
             case R.id.numPad8:
-
                 entered = BigDecimal.valueOf(8, scale);
-
                 break;
-            case R.id.numPad9:
 
+            case R.id.numPad9:
                 entered = BigDecimal.valueOf(9, scale);
                 break;
+
             case R.id.numPad0:
                 entered = BigDecimal.valueOf(0, scale);
                 break;

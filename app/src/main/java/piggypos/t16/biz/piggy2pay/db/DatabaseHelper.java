@@ -17,7 +17,7 @@ import java.sql.SQLException;
  */
 public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
     private static final String DB_NAME = "piggy2pay.db";
-    private static final int DB_VERSION = 12;
+    private static final int DB_VERSION = 13;
 
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -28,8 +28,14 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
         try {
             TableUtils.createTable(connectionSource, Bill.class);
             TableUtils.createTable(connectionSource, BillItem.class);
-            TableUtils.createTable(connectionSource, BillItemPrice.class);
             TableUtils.createTable(connectionSource, BillItemPriceList.class);
+            TableUtils.createTable(connectionSource, BillItemPrice.class);
+
+            TableUtils.createTable(connectionSource, Group.class);
+
+            TableUtils.createTable(connectionSource, Item.class);
+            TableUtils.createTable(connectionSource, ItemPriceList.class);
+            TableUtils.createTable(connectionSource, ItemPrice.class);
 
             /*
             Bill bill = new Bill();
@@ -58,6 +64,12 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
             TableUtils.dropTable(connectionSource, BillItem.class, true);
             TableUtils.dropTable(connectionSource, BillItemPrice.class, true);
             TableUtils.dropTable(connectionSource, BillItemPriceList.class, true);
+
+            TableUtils.dropTable(connectionSource, Group.class, true);
+
+            TableUtils.dropTable(connectionSource, Item.class, true);
+            TableUtils.dropTable(connectionSource, ItemPriceList.class, true);
+            TableUtils.dropTable(connectionSource, ItemPrice.class, true);
 
             onCreate(database, connectionSource);
 
